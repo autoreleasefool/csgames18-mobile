@@ -39,8 +39,7 @@ class ListViewController: BaseViewController {
 
         _ = partService.partsObservable.register { [weak self] (_, parts) in
             print("Nb of parts received: \(parts.count)")
-            let part = Part(name: "test", latitude: 0.0, longitude: 0.0)
-            self?.render([part])
+            self?.render(parts)
         }
     }
     
