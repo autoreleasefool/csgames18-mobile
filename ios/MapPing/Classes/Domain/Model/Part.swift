@@ -5,7 +5,7 @@
 //  Copyright © 2018 Mirego. All rights reserved.
 //
 
-struct Part: Codable {
+struct Part: Codable, Equatable {
     enum CodingKeys: String, CodingKey {
         case name
         case latitude = "lat"
