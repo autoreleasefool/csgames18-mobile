@@ -9,9 +9,8 @@ import UIKit
 
 class ListViewController: BaseViewController {
 
-    private var mainView: ListView {
-        return self.view as! ListView
-    }
+    private let tableView = UITableView(frame: CGRect.zero, style: .plain)
+    private let functionalTableData = FunctionalTableData()
 
     private let partService: PartService
 
@@ -30,15 +29,39 @@ class ListViewController: BaseViewController {
         return .lightContent
     }
 
-    override func loadView() {
-        view = ListView()
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.addSubviewsForAutolayout(tableView)
+        tableView.constrainToFillView(view)
+    
+        functionalTableData.tableView = tableView
 
-        _ = partService.partsObservable.register { (_, parts) in
+        _ = partService.partsObservable.register { [weak self] (_, parts) in
             print("Nb of parts received: \(parts.count)")
+            let part = Part(name: "test", latitude: 0.0, longitude: 0.0)
+            self?.render([part])
         }
+    }
+    
+    private func render(_ parts: [Part]) {
+        
+        var rows: [CellConfigType] = []
+        for part in parts {
+            rows.append(
+                PartCell(
+                    key: "\(part.name)",
+                    state: PartCellViewState(part: part),
+                    cellUpdater: PartCellViewState.updateView
+                )
+            )
+        }
+        
+        let section = TableSection(
+            key: "parts",
+            rows: rows
+        )
+        
+        functionalTableData.renderAndDiff([section])
     }
 }
