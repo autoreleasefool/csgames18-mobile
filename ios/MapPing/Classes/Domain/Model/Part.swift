@@ -27,6 +27,10 @@ struct Part: Codable, Equatable {
     public static func ==(lhs: Part, rhs: Part) -> Bool {
         return lhs.name == rhs.name &&
                 lhs.latitude == rhs.latitude &&
-                lhs.longitude == rhs.longitude
+                lhs.longitude == rhs.longitude &&
+                lhs.component == rhs.component &&
+                lhs.type == rhs.type &&
+                lhs.address == rhs.address &&
+                lhs.notes == rhs.notes
     }
 }

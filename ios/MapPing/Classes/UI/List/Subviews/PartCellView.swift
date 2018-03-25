@@ -41,6 +41,7 @@ class PartCellView: UIView {
         addSubview(distance)
 
         height = 100
+        heightAnchor.constraint(equalToConstant: 100.0).isActive = true
     }
 
     required init(coder aDecoder: NSCoder) {
