@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 typealias PartCell = HostCell<PartCellView, PartCellViewState, LayoutMarginsTableItemLayout>
 
@@ -72,11 +73,22 @@ struct PartCellViewState: Equatable {
             return
         }
         
+        // Compute distance
+        let partLocation = CLLocation(latitude: Double(state.part.latitude!), longitude: Double(state.part.longitude!))
+        
+        let currentCoord = LocationService.instance.lastReportedLocation!
+        let currentLocation = CLLocation(latitude: currentCoord.latitude, longitude: currentCoord.longitude)
+        
+        let distanceInKms = Double(round(partLocation.distance(from: currentLocation)/1000 * 100) / 100)
+        
+        let roundLatitude = Double(round(state.part.latitude!*10000/10000))
+        let roundLongitude = Double(round(state.part.longitude!*10000/10000))
+        
         view.partImage.image = state.getImage()
         view.title.setProperties(text: state.part.name, fit: true)
         view.subTitle.setProperties(text: "Moteur principal", fit: true)
-        view.coordinates.setProperties(text: "46.7552° N, 71.2265° W", fit: true)
-        view.distance.setProperties(text: "(0.62 km)", fit: true)
+        view.coordinates.setProperties(text: "\(roundLatitude)° N, \(roundLongitude)° W", fit: true)
+        view.distance.setProperties(text: "(\(distanceInKms) km)", fit: true)
         view.setNeedsLayout()
     }
     
