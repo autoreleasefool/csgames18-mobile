@@ -50,6 +50,17 @@ class ListViewController: BaseViewController {
             rows.append(
                 PartCell(
                     key: "\(part.name)",
+                    style: CellStyle(
+                        bottomSeparator: .inset,
+                        separatorColor: .lightGray,
+                        accessoryType: .disclosureIndicator
+                    ),
+                    actions: CellActions( selectionAction: { [weak self, part] _ in
+                        guard let strongSelf = self else { return .deselected }
+                        let controller = DetailsViewController(part: part)
+                        strongSelf.show(controller, sender: strongSelf)
+                        return .deselected
+                    }),
                     state: PartCellViewState(part: part),
                     cellUpdater: PartCellViewState.updateView
                 )

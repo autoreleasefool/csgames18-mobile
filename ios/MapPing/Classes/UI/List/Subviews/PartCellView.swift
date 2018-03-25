@@ -93,7 +93,7 @@ struct PartCellViewState: Equatable {
     }
     
     private func getImage() -> UIImage? {
-        return UIImage(named: "part-sensor")
+        return UIImage(named: "part-\(part.type)")
     }
     
     public static func ==(lhs: PartCellViewState, rhs: PartCellViewState) -> Bool {
