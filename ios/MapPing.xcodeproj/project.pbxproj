@@ -51,6 +51,7 @@
 		CA3E3CF7206713C70016A384 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		CA3E3CF9206713C70016A384 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		CA3E3CFA206713C70016A384 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		CA5FA5B72067210800C18E83 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5FA5B62067210800C18E83 /* DetailsViewController.swift */; };
 		F1196A76206481B60084672D /* PartAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1196A75206481B60084672D /* PartAnnotationView.swift */; };
 		F1196A782064857D0084672D /* PartAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1196A772064857D0084672D /* PartAnnotation.swift */; };
 		F1196A7A2064928E0084672D /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1196A792064928E0084672D /* NavigationViewController.swift */; };
@@ -103,6 +104,7 @@
 		C05180B120671B7B007F6B28 /* UITableView+Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Reusable.swift"; sourceTree = "<group>"; };
 		C05180B220671B7B007F6B28 /* TableSectionChangeSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableSectionChangeSet.swift; sourceTree = "<group>"; };
 		C05180B320671B7B007F6B28 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		CA5FA5B62067210800C18E83 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		E901EFF955E9ACF4A910DAE7 /* Pods-MapPing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapPing.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapPing/Pods-MapPing.release.xcconfig"; sourceTree = "<group>"; };
 		F1196A75206481B60084672D /* PartAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartAnnotationView.swift; sourceTree = "<group>"; };
 		F1196A772064857D0084672D /* PartAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartAnnotation.swift; sourceTree = "<group>"; };
@@ -373,6 +375,7 @@
 			children = (
 				F1196A8220649C720084672D /* Subviews */,
 				F19EA0B62061C6C100FE9A5E /* ListViewController.swift */,
+				CA5FA5B62067210800C18E83 /* DetailsViewController.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 				F1196A8420649D580084672D /* PartCellView.swift in Sources */,
 				CA3E3CEF206713C70016A384 /* (null) in Sources */,
 				F19EA0A92061C59B00FE9A5E /* ViewControllerFactory.swift in Sources */,
+				CA5FA5B72067210800C18E83 /* DetailsViewController.swift in Sources */,
 				F1196A9020653D4A0084672D /* PartService.swift in Sources */,
 				F19EA0902061C36000FE9A5E /* AppDelegate.swift in Sources */,
 				CA3E3CF2206713C70016A384 /* (null) in Sources */,

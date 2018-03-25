@@ -74,14 +74,22 @@ struct PartCellViewState: Equatable {
         
         view.partImage.image = state.getImage()
         view.title.setProperties(text: state.part.name, fit: true)
-        view.subTitle.setProperties(text: "Moteur principal", fit: true)
-        view.coordinates.setProperties(text: "46.7552° N, 71.2265° W", fit: true)
+        view.subTitle.setProperties(text: state.part.component, fit: true)
         view.distance.setProperties(text: "(0.62 km)", fit: true)
+        
+        if let latitude = state.part.latitude, let longitude = state.part.longitude {
+            let lat_dir = latitude > 0 ? "N" : "S"
+            let lon_dir = longitude > 0 ? "E" : "W"
+            view.coordinates.setProperties(text: "\(abs(latitude))° \(lat_dir), \(abs(longitude))° \(lon_dir)", fit: true)
+        } else {
+            view.coordinates.text = nil
+        }
+        
         view.setNeedsLayout()
     }
     
     private func getImage() -> UIImage? {
-        return UIImage(named: "part-sensor")
+        return UIImage(named: "part-\(part.type)")
     }
     
     public static func ==(lhs: PartCellViewState, rhs: PartCellViewState) -> Bool {
