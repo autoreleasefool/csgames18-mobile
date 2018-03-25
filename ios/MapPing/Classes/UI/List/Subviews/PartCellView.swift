@@ -86,7 +86,7 @@ struct PartCellViewState: Equatable {
         
         view.partImage.image = state.getImage()
         view.title.setProperties(text: state.part.name, fit: true)
-        view.subTitle.setProperties(text: "Moteur principal", fit: true)
+        view.subTitle.setProperties(text: state.part.component, fit: true)
         view.coordinates.setProperties(text: "\(roundLatitude)° N, \(roundLongitude)° W", fit: true)
         view.distance.setProperties(text: "(\(distanceInKms) km)", fit: true)
         view.setNeedsLayout()
