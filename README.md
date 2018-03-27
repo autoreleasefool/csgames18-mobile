@@ -2,6 +2,8 @@
 
 This repository contains code from the University of Ottawa RNGelicals team submission for the 2018 CS Games mobile competition.
 
+Created by Gabriel Tapuc and Joseph Roque
+
 ## Screenshots
 
 <table>
